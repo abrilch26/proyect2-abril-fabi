@@ -11,9 +11,7 @@ router.get("/signup", homeController.getSignup)
 router.post("/signup", homeController.postSignup)
 
 
-//EXPORTACION
-module.exports = router
-router.get("/", homeController.home);
+
 
 //LOGIN
 //renderizar el form
@@ -21,4 +19,5 @@ router.get("/login", homeController.getLogin);
 //mandar datos
 router.post("/login", homeController.postLogin);
 
+//EXPORTACION
 module.exports = router;
