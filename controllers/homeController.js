@@ -1,66 +1,88 @@
-const User = require ("./../models/User")
-const bcryptjs = require("bcryptjs")
+const User = require("./../models/User");
+const bcryptjs = require("bcryptjs");
 
 exports.home = async (req, res) => {
-    res.render("home")
-}
+  res.render("home");
+};
 
 //SIGNUP - REGISTER
 exports.getSignup = async (req, res) => {
-    res.render("signup")
-}
+  res.render("signup");
+};
 
 exports.postSignup = async (req, res) => {
+  const email = req.body.email;
+  const username = req.body.username;
+  const password = req.body.password;
 
-    const email    = req.body.email
-    const username = req.body.username
-    const password = req.body.password
-    //const imageUrl = req.body.imageUrl
+  if (!email || !username || !password) {
+    res.render("signup", {
+      errorMessage: "Uno o más campos se encuentran vacíos",
+    });
+    return;
+  }
+  const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
+  if (!regex.test(password)) {
+    res.render("signup", {
+      errorMessage:
+        "Tu contraseña debde de contener 6 caracteres, mínimo un númeroy una mayúscula",
+    });
+    return;
+  }
 
-    
-    if(!email || !username || !password) {
-        res.render("signup", {
-            errorMessage: "Uno o más campos se encuentran vacíos"
-        })
-        return
-    }
-    const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/
-    if(!regex.test(password)) {
-        res.render("signup", {
-            errorMessage: "Tu contraseña debde de contener 6 caracteres, mínimo un númeroy una mayúscula"
-        })
-        return
-    }
+  try {
+    const salt = await bcryptjs.genSalt(10);
+    const passwordEncriptado = await bcryptjs.hash(password, salt);
 
-    try {
-        const salt = await bcryptjs.genSalt(10)
-        const passwordEncriptado = await bcryptjs.hash(password, salt)
+    const newUser = await User.create({
+      email,
+      username,
+      passwordEncriptado,
+      imageUrl:
+        "https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG-Clipart.png",
+    });
+    console.log(newUser);
 
-        const newUser = await User.create({
-            email, 
-            username,
-            passwordEncriptado,
-            imageUrl: "https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG-Clipart.png"
-        })
-        console.log(newUser)
-
-        res.redirect("/")
-    } catch (error) {
-        res.status(500).render("signup", {
-            errorMessage: "Hubo un error con la validez de tu correo, intenta de nuevo"
-        })
-    }
-}
-
-
+    res.redirect("/");
+  } catch (error) {
+    res.status(500).render("signup", {
+      errorMessage:
+        "Hubo un error con la validez de tu correo, intenta de nuevo",
+    });
+  }
+};
 
 exports.getLogin = async (req, res) => {
   res.render("login");
 };
 exports.postLogin = async (req, res) => {
-  const { email, password } = req.body;
+  const { email, password, username } = req.body;
 
   //Encontrar usuario
   try {
-  } catch (error) {}
+    //Encontrat usuario
+    const findUser = await User.findOne({ email });
+    if (!findUser) {
+      res.render("login", {
+        msg: "User not Found",
+      });
+      return;
+    }
+
+    //Check password
+    //Use bcryptjs.compareSync(contraseña del form vs findUser.password)-->Devuelve booleano
+    const checkPassword = await bcryptjs.compareSync(
+      password,
+      findUser.passwordEncriptado
+    );
+    if (!checkPassword) {
+      res.render("login", {
+        msg: "Invalid password",
+      });
+      return;
+    }
+    res.redirect(`/`);
+  } catch (error) {
+    console.log(error);
+  }
 };
