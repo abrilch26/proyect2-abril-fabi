@@ -41,7 +41,14 @@ exports.postSignup = async (req, res) => {
       imageUrl:
         "https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG-Clipart.png",
     });
-    console.log(newUser);
+    //GENERAR LA SESIÓN
+    //PERSISTENCIA DE IDENTIDAD
+    req.session.currentUser = {
+      _id: newUser._id,
+      username: newUser.username,
+      email: newUser.email,
+      imageUrl: newUser.imageUrl,
+    };
 
     res.redirect("/");
   } catch (error) {
@@ -81,6 +88,14 @@ exports.postLogin = async (req, res) => {
       });
       return;
     }
+    //GENERAR LA SESIÓN
+    //PERSISTENCIA DE IDENTIDAD
+    req.session.currentUser = {
+      _id: findUser._id,
+      username: findUser.username,
+      email: findUser.email,
+      imageUrl: findUser.imageUrl,
+    };
     res.redirect(`/`);
   } catch (error) {
     console.log(error);
