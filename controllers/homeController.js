@@ -42,5 +42,17 @@ exports.postSignup = async (req, res) => {
             errorMessage: "Hubo un error con la validez de tu correo, intenta de nuevo"
         })
     }
-
 }
+
+
+
+exports.getLogin = async (req, res) => {
+  res.render("login");
+};
+exports.postLogin = async (req, res) => {
+  const { email, password } = req.body;
+
+  //Encontrar usuario
+  try {
+  } catch (error) {}
+};
