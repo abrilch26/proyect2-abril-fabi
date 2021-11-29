@@ -5,4 +5,10 @@ exports.home = async (req, res) => {
 exports.getLogin = async (req, res) => {
   res.render("login");
 };
-exports.postLogin = async (req, res) => {};
+exports.postLogin = async (req, res) => {
+  const { email, password } = req.body;
+
+  //Encontrar usuario
+  try {
+  } catch (error) {}
+};
