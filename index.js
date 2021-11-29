@@ -4,10 +4,13 @@ const app = express();
 const hbs = require("hbs");
 //importar DB
 const connectDB = require("./db/db");
+const sessionManager = require ("./config/session")
 
 require("dotenv").config();
 
+
 //2MIDDLEWARES
+sessionManager(app)
 app.use(express.static("public"));
 
 app.set("views", __dirname + "/views");
@@ -24,6 +27,11 @@ app.use(express.urlencoded({ extended: true }));
 connectDB();
 
 //3. RUTAS
+app.use((req, res, next) => {
+  res.locals.currentUser = req.session.currentUser
+  next()
+})
+
 app.use("/", require("./routes/home"));
 
 //4. SERVER
