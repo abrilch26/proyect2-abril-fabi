@@ -13,11 +13,6 @@ const {
 router.get("/", home);
 
 //REGISTER
-router.get("/signup", homeController.getSignup)
-router.post("/signup", homeController.postSignup)
-
-
-
 router.get("/signup", getSignup);
 router.post("/signup", postSignup);
 
