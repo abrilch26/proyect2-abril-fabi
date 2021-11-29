@@ -14,8 +14,11 @@ app.set("views", __dirname + "/views");
 app.set("view engine", "hbs");
 
 hbs.registerPartials(__dirname + "/views/partials");
-app.use(express.urlencoded({ extended: true }))
 
+//Para poder usar req.body hay que decirle a express que agrege una configuracion extra
+//Meter el middleware urlencoded
+//obtener datos que se mandan en los formularios
+app.use(express.urlencoded({ extended: true }));
 
 //Invocamos DB
 connectDB();
