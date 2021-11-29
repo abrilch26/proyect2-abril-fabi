@@ -9,8 +9,7 @@ const {
   postLogin,
 } = require("./../controllers/homeController");
 
-//HOME
-router.get("/", home);
+
 
 //REGISTER
 router.get("/signup", getSignup);
@@ -21,6 +20,9 @@ router.post("/signup", postSignup);
 router.get("/login", getLogin);
 //mandar datos
 router.post("/login", postLogin);
+
+//HOME
+router.get("/", home);
 
 //EXPORTACION
 module.exports = router;
