@@ -15,6 +15,8 @@ const {
   usuarioNoLoggeado,
 } = require("./../middlewares/route-guard");
 
+//HOME
+router.get("/", home);
 //REGISTER
 router.get("/signup", usuarioNoLoggeado, getSignup);
 router.post("/signup", usuarioNoLoggeado, postSignup);
