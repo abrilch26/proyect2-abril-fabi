@@ -1,5 +1,6 @@
 const User = require("./../models/User");
 const bcryptjs = require("bcryptjs");
+const Dog = require("./../models/Dog");
 
 exports.home = async (req, res) => {
   res.render("home");
@@ -105,9 +106,21 @@ exports.postLogin = async (req, res) => {
 //CERRAR SESION
 exports.postLogout = async (req, res) => {
   req.session.destroy((error) => {
-    if(error) {
-      return
+    if (error) {
+      return;
     }
-    res.redirect("/")
-  })
-}
+    res.redirect("/");
+  });
+};
+
+//CRUD
+//GET DOGS
+exports.getDogs = async (req, res) => {
+  try {
+    const strayDogs = await Dog.find({});
+    //renderice la data
+    res.render("home", {
+      strayDogs,
+    });
+  } catch (error) {}
+};
