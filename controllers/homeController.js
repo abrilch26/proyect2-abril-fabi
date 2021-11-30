@@ -40,7 +40,7 @@ exports.postSignup = async (req, res) => {
       username,
       passwordEncriptado,
       imageUrl:
-        "https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG-Clipart.png",
+        "https://i.pinimg.com/564x/52/af/9f/52af9f7447e50bd84640107c75418455.jpg",
     });
     //GENERAR LA SESIÓN
     //PERSISTENCIA DE IDENTIDAD
