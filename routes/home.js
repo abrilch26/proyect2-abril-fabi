@@ -9,17 +9,20 @@ const {
   postLogin,
 } = require("./../controllers/homeController");
 
-
+const {
+  usuarioLoggeado,
+  usuarioNoLoggeado,
+}= require("./../middlewares/route-guard")
 
 //REGISTER
-router.get("/signup", getSignup);
-router.post("/signup", postSignup);
+router.get("/signup", usuarioNoLoggeado, getSignup);
+router.post("/signup",usuarioNoLoggeado, postSignup);
 
 //LOGIN
 //renderizar el form
-router.get("/login", getLogin);
+router.get("/login",usuarioNoLoggeado, getLogin);
 //mandar datos
-router.post("/login", postLogin);
+router.post("/login", usuarioNoLoggeado, postLogin);
 
 //HOME
 router.get("/", home);
