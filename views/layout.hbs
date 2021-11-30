@@ -193,13 +193,15 @@
                     tabindex="-1"
                     id="user-menu-item-0"
                   >Tu Perfil</a>
-                  <a
-                    href="/logout"
+                  <form action ="/logout" method="POST">
+                  <button
+                    
                     class="block px-4 py-2 text-sm text-gray-700"
                     role="menuitem"
                     tabindex="-1"
                     id="user-menu-item-2"
-                  >Cerrar sesión</a>
+                  >Cerrar sesión</button>
+                  </form>
                 </div>
               </div>
             </div>
@@ -267,10 +269,12 @@
               href="#"
               class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700"
             >Tu Perfil</a>
-            <a
+            <form action="/logout" method="POST">
+            <button
               href="/logout"
               class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700"
-            >Cerrar sesión</a>
+            >Cerrar sesión</button>
+            </form>
           </div>
         </div>
       </div>

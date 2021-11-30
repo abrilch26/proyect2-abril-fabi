@@ -103,3 +103,11 @@ exports.postLogin = async (req, res) => {
 };
 
 //CERRAR SESION
+exports.postLogout = async (req, res) => {
+  req.session.destroy((error) => {
+    if(error) {
+      return
+    }
+    res.redirect("/")
+  })
+}

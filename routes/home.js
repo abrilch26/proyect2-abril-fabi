@@ -27,5 +27,8 @@ router.get("/login", usuarioNoLoggeado, getLogin);
 //mandar datos
 router.post("/login", usuarioNoLoggeado, postLogin);
 
+//LOGOUT
+router.post("/logout", usuarioLoggeado, postLogout)
+
 //EXPORTACION
 module.exports = router;
