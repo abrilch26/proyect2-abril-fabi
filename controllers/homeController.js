@@ -25,7 +25,7 @@ exports.postSignup = async (req, res) => {
   if (!regex.test(password)) {
     res.render("signup", {
       errorMessage:
-        "Tu contraseña debde de contener 6 caracteres, mínimo un númeroy una mayúscula",
+        "Tu contraseña debde de contener 6 caracteres, mínimo un número y una mayúscula",
     });
     return;
   }
@@ -50,7 +50,7 @@ exports.postSignup = async (req, res) => {
       imageUrl: newUser.imageUrl,
     };
 
-    res.redirect("/");
+    res.redirect(`/user/${newUser.username}`);
   } catch (error) {
     res.status(500).render("signup", {
       errorMessage:
@@ -63,7 +63,7 @@ exports.getLogin = async (req, res) => {
   res.render("login");
 };
 exports.postLogin = async (req, res) => {
-  const { email, password, username } = req.body;
+  const { email, password } = req.body;
 
   //Encontrar usuario
   try {
@@ -71,7 +71,7 @@ exports.postLogin = async (req, res) => {
     const findUser = await User.findOne({ email });
     if (!findUser) {
       res.render("login", {
-        msg: "User not Found",
+        msg: "Usuario no encontrado",
       });
       return;
     }
@@ -84,7 +84,7 @@ exports.postLogin = async (req, res) => {
     );
     if (!checkPassword) {
       res.render("login", {
-        msg: "Invalid password",
+        msg: "Contraseña Incorrecta",
       });
       return;
     }
@@ -96,8 +96,10 @@ exports.postLogin = async (req, res) => {
       email: findUser.email,
       imageUrl: findUser.imageUrl,
     };
-    res.redirect(`/`);
+    res.redirect(`/user/${findUser.username}`);
   } catch (error) {
     console.log(error);
   }
 };
+
+//CERRAR SESION

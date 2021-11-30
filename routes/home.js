@@ -7,12 +7,18 @@ const {
   postSignup,
   getLogin,
   postLogin,
+  postLogout,
 } = require("./../controllers/homeController");
 
+<<<<<<< Updated upstream
 const {
   usuarioLoggeado,
   usuarioNoLoggeado,
 }= require("./../middlewares/route-guard")
+=======
+//HOME
+router.get("/", home);
+>>>>>>> Stashed changes
 
 //REGISTER
 router.get("/signup", usuarioNoLoggeado, getSignup);
@@ -23,9 +29,6 @@ router.post("/signup",usuarioNoLoggeado, postSignup);
 router.get("/login",usuarioNoLoggeado, getLogin);
 //mandar datos
 router.post("/login", usuarioNoLoggeado, postLogin);
-
-//HOME
-router.get("/", home);
 
 //EXPORTACION
 module.exports = router;
