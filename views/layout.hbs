@@ -177,32 +177,34 @@
 
                 <!--
               Dropdown menu, show/hide based on menu state.
-            -->
-                <div
-                  class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
-                  role="menu"
-                  aria-orientation="vertical"
-                  aria-labelledby="user-menu-button"
-                  tabindex="-1"
-                >
-                  <!-- Active: "bg-gray-100", Not Active: "" -->
-                  <a
-                    href="#"
-                    class="block px-4 py-2 text-sm text-gray-700"
-                    role="menuitem"
+            -->{{#if
+                  currentUser
+                }}
+                  <div
+                    class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                    role="menu"
+                    aria-orientation="vertical"
+                    aria-labelledby="user-menu-button"
                     tabindex="-1"
-                    id="user-menu-item-0"
-                  >Tu Perfil</a>
-                  <form action ="/logout" method="POST">
-                  <button
-                    
-                    class="block px-4 py-2 text-sm text-gray-700"
-                    role="menuitem"
-                    tabindex="-1"
-                    id="user-menu-item-2"
-                  >Cerrar sesión</button>
-                  </form>
-                </div>
+                  >
+                    <!-- Active: "bg-gray-100", Not Active: "" -->
+                    <a
+                      href="/user/{{currentUser.username}}"
+                      class="block px-4 py-2 text-sm text-gray-700"
+                      role="menuitem"
+                      tabindex="-1"
+                      id="user-menu-item-0"
+                    >Tu Perfil</a>
+                    <form action="/logout" method="POST">
+                      <button
+                        class="block px-4 py-2 text-sm text-gray-700"
+                        role="menuitem"
+                        tabindex="-1"
+                        id="user-menu-item-2"
+                      >Cerrar sesión</button>
+                    </form>
+                  </div>
+                {{/if}}
               </div>
             </div>
           </div>
@@ -264,18 +266,20 @@
               </svg>
             </button>
           </div>
-          <div class="mt-3 px-2 space-y-1">
-            <a
-              href="#"
-              class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700"
-            >Tu Perfil</a>
-            <form action="/logout" method="POST">
-            <button
-              href="/logout"
-              class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700"
-            >Cerrar sesión</button>
-            </form>
-          </div>
+          {{#if currentUser}}
+            <div class="mt-3 px-2 space-y-1">
+              <a
+                href="/user/{{currentUser.username}}"
+                class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700"
+              >Tu Perfil</a>
+              <form action="/logout" method="POST">
+                <button
+                  href="/logout"
+                  class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700"
+                >Cerrar sesión</button>
+              </form>
+            </div>
+          {{/if}}
         </div>
       </div>
     </nav>
