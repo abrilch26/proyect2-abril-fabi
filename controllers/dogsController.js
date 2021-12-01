@@ -40,6 +40,7 @@ exports.postCreateDog = async (req, res) => {
   const name = req.body.name;
   const age = req.body.age;
   const size = req.body.size;
+  const sexo = req.body.sexo;
   const funFact = req.body.funFact;
   const image = req.body.image;
   const description = req.body.description;
@@ -50,6 +51,7 @@ exports.postCreateDog = async (req, res) => {
     name,
     age,
     size,
+    sexo,
     funFact,
     image,
     description,
@@ -81,6 +83,7 @@ exports.postEditDog = async (req, res) => {
   const name = req.body.name;
   const age = req.body.age;
   const size = req.body.size;
+  const sexo = req.body.sexo;
   const funFact = req.body.funFact;
   const image = req.body.image;
   const description = req.body.description;
@@ -90,7 +93,7 @@ exports.postEditDog = async (req, res) => {
   //3. Realizar la actualizacion de datos en la DB
   const updateDog = await Dog.findByIdAndUpdate(
     dogID, //id del documento
-    { name, age, size, funFact, image, description, informes, owner },
+    { name, age, size, sexo, funFact, image, description, informes, owner },
     { new: true } //devolver a la variable el documento
   );
   res.redirect(`/dogs/allDogs`);
