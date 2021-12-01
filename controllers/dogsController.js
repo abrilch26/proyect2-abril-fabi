@@ -27,3 +27,10 @@ exports.getSingleDog = async (req, res) => {
     getDog,
   });
 };
+
+//BORRAR PERRITOS
+exports.postDeleteDog = async(req, res) => {
+  const dogID = req.params.dogID
+  const deletedDog = await Dog.findByIdAndDelete(dogID)
+  res.redirect("/dogs/allDogs")
+}
