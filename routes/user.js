@@ -10,6 +10,7 @@ const {
   usuarioLoggeado,
   usuarioNoLoggeado,
 } = require("./../middlewares/route-guard");
+
 //RUTAS
 //Obtener vista
 //Query params para renderizar la url user/Dulce
