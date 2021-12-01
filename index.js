@@ -33,6 +33,7 @@ app.use((req, res, next) => {
 
 app.use("/", require("./routes/home"));
 app.use("/user", require("./routes/user"));
+app.use("/dogs", require("./routes/dog"))
 
 //4. SERVER
 app.listen(process.env.PORT, () => {

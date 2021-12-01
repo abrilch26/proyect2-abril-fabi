@@ -51,7 +51,7 @@ exports.postSignup = async (req, res) => {
       imageUrl: newUser.imageUrl,
     };
 
-    res.redirect(`/user/${newUser.username}`);
+    res.redirect("/dogs/allDogs");
   } catch (error) {
     res.status(500).render("signup", {
       errorMessage:
@@ -97,7 +97,7 @@ exports.postLogin = async (req, res) => {
       email: findUser.email,
       imageUrl: findUser.imageUrl,
     };
-    res.redirect(`/user/${findUser.username}`);
+    res.redirect("/dogs/allDogs");
   } catch (error) {
     console.log(error);
   }
@@ -113,14 +113,3 @@ exports.postLogout = async (req, res) => {
   });
 };
 
-//CRUD
-//GET DOGS
-exports.getDogs = async (req, res) => {
-  try {
-    const strayDogs = await Dog.find({});
-    //renderice la data
-    res.render("home", {
-      strayDogs,
-    });
-  } catch (error) {}
-};
