@@ -5,7 +5,7 @@ const Dog = require("./../models/Dog");
 require("dotenv").config();
 
 //CONEXION A BD
-mongoose.connect("mongodb+srv://abril_ch:BViaa1WBTA8YrrS0@cluster0.zmbxa.mongodb.net/StrayDogs_A&F", {
+mongoose.connect(process.env.MONGODB, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });

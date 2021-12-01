@@ -1,4 +1,4 @@
-{{#if currentUser}}
+{{#with foundDog}}
 <div class="min-h-full">
   <main class="py-10">
     <div
@@ -9,15 +9,15 @@
           <div class="bg-white shadow sm:rounded-lg">
             <div class="px-4 py-5 sm:px-6">
               <h2 id="applicant-information-title" class="text-lg leading-6 font-medium text-gray-900">
-                ¿Encontraste un perrito?
+                ¿Desea editar información de {{this.name}} ?
               </h2>
               <p class="mt-1 max-w-2xl text-sm text-gray-500">
-                Actualizar informacion de perrito:
+                Actualizar informacion de:
               </p>
             </div>
             <div class="border-t border-gray-200 px-4 py-5 sm:px-6">
               {{! form dogs }}
-              <form action="/user/profile" method="POST">
+              <form action="/dogs/{{this._id}}/editDog" method="POST">
                 <div class="space-y-6">
                   <div>
                     <div class="mt-1">
@@ -25,53 +25,53 @@
                         Nombre
                       </label>
                       <textarea id="name" name="name" rows="3"
-                        class="block w-full shadow-sm focus:ring-sky-500 focus:border-sky-500 sm:text-sm border border-gray-300 rounded-md mt-3" value="{{data.author}}></textarea>
+                        class="block w-full shadow-sm focus:ring-sky-500 focus:border-sky-500 sm:text-sm border border-gray-300 rounded-md mt-3">{{this.name}}</textarea>
                       <label for="project-name" class="block text-sm font-medium text-gray-700 mt-5">
                         Edad
                       </label>
                       <textarea id="age" name="age" rows="3"
-                        class="block w-full shadow-sm focus:ring-sky-500 focus:border-sky-500 sm:text-sm border border-gray-300 rounded-md mt-3"></textarea>
+                        class="block w-full shadow-sm focus:ring-sky-500 focus:border-sky-500 sm:text-sm border border-gray-300 rounded-md mt-3">{{this.age}}</textarea>
 
 
                       <label for="project-name" class="block text-sm font-medium text-gray-700 mt-5">
                         Tamaño
                       </label>
                       <textarea id="size" name="size" rows="3"
-                        class="block w-full shadow-sm focus:ring-sky-500 focus:border-sky-500 sm:text-sm border border-gray-300 rounded-md mt-3"></textarea>
+                        class="block w-full shadow-sm focus:ring-sky-500 focus:border-sky-500 sm:text-sm border border-gray-300 rounded-md mt-3">{{this.size}}</textarea>
 
 
                       <label for="description" class="block text-sm font-medium text-gray-700 mt-5">
                         Dato curioso
                       </label>
                       <textarea id="funFact" name="funFact" rows="3"
-                        class="block w-full shadow-sm focus:ring-sky-500 focus:border-sky-500 sm:text-sm border border-gray-300 rounded-md mt-3"></textarea>
+                        class="block w-full shadow-sm focus:ring-sky-500 focus:border-sky-500 sm:text-sm border border-gray-300 rounded-md mt-3">{{this.funFact}}</textarea>
 
                        <label for="description" class="block text-sm font-medium text-gray-700 mt-5">
                         Foto del perrito
                       </label>
                       <textarea id="image" name="image" rows="3"
-                        class="block w-full shadow-sm focus:ring-sky-500 focus:border-sky-500 sm:text-sm border border-gray-300 rounded-md mt-3"></textarea>
+                        class="block w-full shadow-sm focus:ring-sky-500 focus:border-sky-500 sm:text-sm border border-gray-300 rounded-md mt-3">{{this.image}}</textarea>
 
                       <label for="description" class="block text-sm font-medium text-gray-700 mt-5">
                         Descripción
                       </label>
                       <textarea id="description" name="description" rows="3"
-                        class="block w-full shadow-sm focus:ring-sky-500 focus:border-sky-500 sm:text-sm border border-gray-300 rounded-md mt-3"></textarea>
+                        class="block w-full shadow-sm focus:ring-sky-500 focus:border-sky-500 sm:text-sm border border-gray-300 rounded-md mt-3">{{this.description}}</textarea>
                       <label for="project-name" class="block text-sm font-medium text-gray-700 mt-5">
                         Datos de Contacto
                       </label>
                       <textarea id="informes" name="informes" rows="3"
-                        class="block w-full shadow-sm focus:ring-sky-500 focus:border-sky-500 sm:text-sm border border-gray-300 rounded-md mt-3"></textarea>
+                        class="block w-full shadow-sm focus:ring-sky-500 focus:border-sky-500 sm:text-sm border border-gray-300 rounded-md mt-3">{{this.informes}}</textarea>
                     </div>
               </form>
             </div>
               <button 
               type="submit"
-                class="block bg-gray-50 text-sm font-medium text-gray-500 text-center px-4 py-4 hover:text-gray-700 sm:rounded-b-lg">Registra a tu perrito</button>
+                class="block bg-gray-50 text-sm font-medium text-gray-500 text-center px-4 py-4 hover:text-gray-700 sm:rounded-b-lg">Actualizar Datos</button>
           </div>
         </section>
       </div>
     </div>
   </main>
 </div>
-{{/if}}
+{{/with}}
