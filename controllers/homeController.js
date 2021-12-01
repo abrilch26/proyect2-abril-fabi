@@ -112,4 +112,3 @@ exports.postLogout = async (req, res) => {
     res.redirect("/");
   });
 };
-

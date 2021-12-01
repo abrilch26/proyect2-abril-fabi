@@ -44,7 +44,9 @@
             />
           </div>
         </div>
-
+        {{#if msg}}
+          <p class="text-red-400 max-w-sm text-sm"> {{msg}} </p>
+        {{/if}}
         <div>
           <button
             type="submit"
