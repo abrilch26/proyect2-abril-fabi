@@ -1,7 +1,5 @@
 const Dog = require("./../models/Dog");
 
-
-
 //CRUD
 //GET DOGS
 exports.getDogs = async (req, res) => {
@@ -14,13 +12,18 @@ exports.getDogs = async (req, res) => {
   } catch (error) {}
 };
 
-
 //DETAILS DOG
 exports.getSingleDog = async (req, res) => {
   const singleDogID = req.params.dogID;
   const getDog = await Dog.findById(singleDogID);
+  if (getDog.owner === req.session.currentUser._id) {
+    res.render("dogs/singleDog", {
+      getDog,
+      isOwner: "Es dueño",
+    });
+    return;
+  }
   res.render("dogs/singleDog", {
     getDog,
   });
 };
-

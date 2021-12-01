@@ -1,23 +1,6 @@
 {{#if currentUser}}
 <div class="min-h-full">
   <main class="py-10">
-    <!-- Page header -->
-    <div
-      class="max-w-3xl mx-auto px-4 sm:px-6 md:flex md:items-center md:justify-between md:space-x-5 lg:max-w-7xl lg:px-8">
-      <div class="flex items-center space-x-5">
-        <div class="flex-shrink-0">
-          <div class="relative">
-            <img class="h-16 w-16 rounded-full" src="{{currentUser.imageUrl}}" alt="" />
-            <span class="absolute inset-0 shadow-inner rounded-full" aria-hidden="true"></span>
-          </div>
-        </div>
-        <div>
-          <h1 class="text-2xl font-bold text-gray-900">{{currentUser.username}}</h1>
-          <p class="text-sm font-medium text-gray-500">{{currentUser.email}}</p>
-        </div>
-      </div>
-    </div>
-
     <div
       class="mt-8 max-w-3xl mx-auto grid grid-cols-1 gap-6 sm:px-6 lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3">
       <div class="space-y-6 lg:col-start-1 lg:col-span-2">
@@ -29,12 +12,12 @@
                 ¿Encontraste un perrito?
               </h2>
               <p class="mt-1 max-w-2xl text-sm text-gray-500">
-                Ingresalo a nuestra base de datos aquí:
+                Actualizar informacion de perrito:
               </p>
             </div>
             <div class="border-t border-gray-200 px-4 py-5 sm:px-6">
               {{! form dogs }}
-              <form action="/user/{{currentUser.username}}" method="POST">
+              <form action="/user/profile" method="POST">
                 <div class="space-y-6">
                   <div>
                     <div class="mt-1">
@@ -42,7 +25,7 @@
                         Nombre
                       </label>
                       <textarea id="name" name="name" rows="3"
-                        class="block w-full shadow-sm focus:ring-sky-500 focus:border-sky-500 sm:text-sm border border-gray-300 rounded-md mt-3"></textarea>
+                        class="block w-full shadow-sm focus:ring-sky-500 focus:border-sky-500 sm:text-sm border border-gray-300 rounded-md mt-3" value="{{data.author}}></textarea>
                       <label for="project-name" class="block text-sm font-medium text-gray-700 mt-5">
                         Edad
                       </label>

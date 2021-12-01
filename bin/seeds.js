@@ -5,7 +5,7 @@ const Dog = require("./../models/Dog");
 require("dotenv").config();
 
 //CONEXION A BD
-mongoose.connect(process.env.MONGODB, {
+mongoose.connect("mongodb://localhost:27017/proyecto2", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -21,6 +21,7 @@ const strayDogs = [
     description:
       "Mix de labrador, vacunada y esterilizada. Es muuuuuy amorosa y tranquila. Convive con perros, gatos y niños",
     informes: "celular: (55)23152798",
+    owner: "61a6a8824776bc026bade3ab",
   },
   {
     name: "Laika",
@@ -31,6 +32,7 @@ const strayDogs = [
     description:
       "Cruza de Samoyedo. Es amorosa y juguetona a la espera de adopción",
     informes: "teléfono: 41655581",
+    owner: "61a6a8824776bc026bade3ab",
   },
   {
     name: "Mollete",
@@ -41,6 +43,7 @@ const strayDogs = [
     description:
       "Raza única, bajo contrato de esterilización. Es muy tierno y fiel, le encanta estar dentro de la casa y sabe ir al baño afuera",
     informes: "celular: 55 87430921",
+    owner: "61a6a8824776bc026bade3ab",
   },
 ];
 

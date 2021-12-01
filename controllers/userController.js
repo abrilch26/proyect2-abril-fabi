@@ -12,6 +12,7 @@ exports.postCreateDog = async (req, res) => {
   const image = req.body.image;
   const description = req.body.description;
   const informes = req.body.informes;
+  const owner = req.session.currentUser._id;
 
   const newDogCreated = await Dog.create({
     name,
@@ -21,6 +22,7 @@ exports.postCreateDog = async (req, res) => {
     image,
     description,
     informes,
+    owner,
   });
 
   res.redirect("/dogs/allDogs");

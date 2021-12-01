@@ -140,11 +140,15 @@
                   </ul>
                 </div>
               </div>
+              {{/with}}
               <!-- More sections... -->
+              {{#if isOwner}}
+              <a href="/dogs/edit">Editar perrito</a>
+              <a href="/">Eliminar perrito</a>
+              {{/if}}
             </div>
           </section>
         </div>
       </div>
     </div>
   </div>
-{{/with}}
