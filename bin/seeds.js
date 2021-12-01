@@ -5,7 +5,7 @@ const Dog = require("./../models/Dog");
 require("dotenv").config();
 
 //CONEXION A BD
-mongoose.connect("mongodb://localhost:27017/proyecto2", {
+mongoose.connect(process.env.MONGODB, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
