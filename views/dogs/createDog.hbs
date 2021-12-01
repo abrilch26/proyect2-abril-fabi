@@ -13,12 +13,12 @@
                 ¿Encontraste un perrito?
               </h2>
               <p class="mt-1 max-w-2xl text-sm text-gray-500">
-                Ingresalo a nuestra base de datos aquí:
+                Ingrésalo a nuestra base de datos aquí:
               </p>
             </div>
             <div class="border-t border-gray-200 px-4 py-5 sm:px-6">
               {{! form dogs }}
-              <form action="/user/{{currentUser.username}}" method="POST">
+              <form action="/dogs/createDog" method="POST">
                 <div class="space-y-6">
                   <div>
                     <div class="mt-1">
@@ -38,6 +38,12 @@
                         Tamaño
                       </label>
                       <textarea id="size" name="size" rows="3"
+                        class="block w-full shadow-sm focus:ring-sky-500 focus:border-sky-500 sm:text-sm border border-gray-300 rounded-md mt-3"></textarea>
+
+                        <label for="project-name" class="block text-sm font-medium text-gray-700 mt-5">
+                        Sexo
+                      </label>
+                      <textarea id="sexo" name="sexo" rows="3"
                         class="block w-full shadow-sm focus:ring-sky-500 focus:border-sky-500 sm:text-sm border border-gray-300 rounded-md mt-3"></textarea>
 
 
