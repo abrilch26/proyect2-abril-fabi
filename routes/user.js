@@ -15,8 +15,5 @@ const {
 //Query params para renderizar la url user/Dulce
 router.get("/:user", getProfile);
 
-//Crear perrito
-router.post("/:user", usuarioLoggeado, postCreateDog);
-
 //EXPORTACION
 module.exports = router;

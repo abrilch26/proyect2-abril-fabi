@@ -6,14 +6,32 @@ const {
   usuarioNoLoggeado,
 } = require("./../middlewares/route-guard");
 
-const { getSingleDog, getDogs } = require("./../controllers/dogsController");
+const {
+  getSingleDog,
+  getViewCreateDog,
+  postCreateDog,
+  getDogs,
+  getViewEdit,
+  postEditDog,
+  postDeleteDog,
+} = require("./../controllers/dogsController");
 
 //CRUD
 //Renderizar List de Dogs
 router.get("/allDogs", usuarioLoggeado, getDogs);
 
+//CREAR PERRITO
+router.get("/createDog", usuarioLoggeado, getViewCreateDog);
+router.post("/createDog", usuarioLoggeado, postCreateDog);
+
 //Get details dog
 router.get("/:dogID", usuarioLoggeado, getSingleDog);
 
+//EDITAR PERRITO
+router.get("/:dogID/editDog/", usuarioLoggeado, getViewEdit);
+router.post("/:dogID/editDog/", usuarioLoggeado, postEditDog);
+
+//BORRAR PERRITOS
+router.post("/:dogID/deleteDog/", usuarioLoggeado, postDeleteDog);
 //EXPORTACIONES
 module.exports = router;
