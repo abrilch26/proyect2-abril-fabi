@@ -26,7 +26,7 @@ exports.postSignup = async (req, res) => {
   if (!regex.test(password)) {
     res.render("signup", {
       errorMessage:
-        "Tu contraseña debde de contener 6 caracteres, mínimo un número y una mayúscula",
+        "Tu contraseña debe contener 6 caracteres, mínimo un número y una mayúscula",
     });
     return;
   }
