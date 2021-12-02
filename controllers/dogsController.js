@@ -105,3 +105,12 @@ exports.postDeleteDog = async (req, res) => {
   const deletedDog = await Dog.findByIdAndDelete(dogID);
   res.redirect("/dogs/allDogs");
 };
+
+//ADOPTAR PERRITO
+exports.getViewAdopt = async (req, res) => {
+  const dogID = req.params.dogID;
+  const foundDog = await Dog.findById(dogID);
+  res.render("adoption/formAdoption", {
+    foundDog,
+  });
+};

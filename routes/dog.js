@@ -1,7 +1,10 @@
 //1. IMPORTACIONES
 const express = require("express");
 const router = express.Router();
-const {usuarioLoggeado, usuarioNoLoggeado } = require("./../middlewares/route-guard");
+const {
+  usuarioLoggeado,
+  usuarioNoLoggeado,
+} = require("./../middlewares/route-guard");
 
 const {
   getSingleDog,
@@ -11,6 +14,7 @@ const {
   getViewEdit,
   postEditDog,
   postDeleteDog,
+  getViewAdopt,
 } = require("./../controllers/dogsController");
 
 //CRUD
@@ -30,5 +34,9 @@ router.post("/:dogID/editDog/", usuarioLoggeado, postEditDog);
 
 //BORRAR PERRITOS
 router.post("/:dogID/deleteDog/", usuarioLoggeado, postDeleteDog);
+
+//ADOPTAR PERRITOS
+//Get view adopt
+router.get("/:dogID/adopt/", usuarioLoggeado, getViewAdopt);
 //EXPORTACIONES
 module.exports = router;
