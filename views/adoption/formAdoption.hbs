@@ -13,7 +13,7 @@
                             </h2>
                         </div>
                         <div class="border-t border-gray-200 px-4 py-5 sm:px-6">
-                            <form class="space-y-8 divide-y divide-gray-200">
+                           <form action="/dogs/{{this._id}}/adopt" method="POST" class="space-y-6">
                                 <div>
                                     <div>
                                         <h3 class="text-lg leading-6 font-medium text-gray-900">
@@ -26,12 +26,12 @@
                                     <div class="space-y-6 sm:space-y-5">
                                         <div
                                             class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                                            <label for="first-name"
+                                            <label for="firstName"
                                                 class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
                                                 Nombre
                                             </label>
                                             <div class="mt-1 sm:mt-0 sm:col-span-2">
-                                                <input type="text" name="first-name" id="first-name" required
+                                                <input type="text" name="firstName" id="firstName" required
                                                     autocomplete="given-name"
                                                     class="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md" />
                                             </div>
@@ -39,13 +39,13 @@
 
                                         <div
                                             class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                                            <label for="last-name"
+                                            <label for="lastName"
                                                 class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
                                                 Apellido
                                             </label>
                                             <div class="mt-1 sm:mt-0 sm:col-span-2">
-                                                <input type="text" name="last-name" id="last-name" required
-                                                    autocomplete="family-name"
+                                                <input type="text" name="lastName:" id="lastName:" required
+                                                    autocomplete="lastName:"
                                                     class="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md" />
                                             </div>
                                         </div>
@@ -93,12 +93,12 @@
 
                                         <div
                                             class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                                            <label for="street-address"
+                                            <label for="streetAddress"
                                                 class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
                                                 Calle
                                             </label>
                                             <div class="mt-1 sm:mt-0 sm:col-span-2">
-                                                <input type="text" name="street-address" id="street-address" required
+                                                <input type="text" name="streetAddress" id="streetAddress" required
                                                     autocomplete="street-address"
                                                     class="block max-w-lg w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md" />
                                             </div>
@@ -111,7 +111,7 @@
                                                 Código Postal
                                             </label>
                                             <div class="mt-1 sm:mt-0 sm:col-span-2">
-                                                <input type="text" name="postal-code" id="postal-code" required
+                                                <input type="text" name="postalCode" id="postalCode" required
                                                     autocomplete="postal-code"
                                                     class="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md" />
                                             </div>
@@ -149,7 +149,7 @@
                                                 ¿Tienes más mascotas? ¿Cuáles y cuántas?
                                             </label>
                                             <div class="mt-1 sm:mt-0 sm:col-span-2">
-                                                <textarea id="mascotas" name="pets" rows="3" required
+                                                <textarea id="pets" name="pets" rows="3" required
                                                     class="block w-full shadow-sm focus:ring-sky-500 focus:border-sky-500 sm:text-sm border border-gray-300 rounded-md mt-3"></textarea>
                                             </div>
                                         </div>
@@ -161,7 +161,7 @@
                                                 ¿Cuántas veces al día saldrías a pasear con {{this.name}}?
                                             </label>
                                             <div class="mt-1 sm:mt-0 sm:col-span-2">
-                                                <input id="paseo" name="paseo" type="text" autocomplete="email" required
+                                                <input id="paseos" name="paseos" type="text" autocomplete="email" required
                                                     class="block max-w-lg w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md" />
                                             </div>
                                         </div>
@@ -172,7 +172,7 @@
                                                 class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
                                                 ¿Qué tan grande es el espacio dónde habitaría {{this.name}}?
                                             </label>
-                                            <textarea id="mascotas" name="pets" rows="3" required
+                                            <textarea id="space" name="space" rows="3" required
                                                 class="block w-full shadow-sm focus:ring-sky-500 focus:border-sky-500 sm:text-sm border border-gray-300 rounded-md mt-3"></textarea>
                                         </div>
                                         <div class="pt-5">

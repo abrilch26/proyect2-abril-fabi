@@ -158,6 +158,7 @@ exports.postAdopt = async (req, res) => {
     paseos,
    space
   });
+  console.log(newAdoptForm)
 
   res.redirect("/dogs/AllDogs");
 };
