@@ -15,6 +15,7 @@ const {
   postEditDog,
   postDeleteDog,
   getViewAdopt,
+  postAdopt
 } = require("./../controllers/dogsController");
 
 //CRUD
@@ -38,5 +39,8 @@ router.post("/:dogID/deleteDog/", usuarioLoggeado, postDeleteDog);
 //ADOPTAR PERRITOS
 //Get view adopt
 router.get("/:dogID/adopt/", usuarioLoggeado, getViewAdopt);
+
+router.post("/:dogID/adopt/", usuarioLoggeado, postAdopt);
+
 //EXPORTACIONES
 module.exports = router;

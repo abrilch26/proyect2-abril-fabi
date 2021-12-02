@@ -1,4 +1,5 @@
 const Dog = require("./../models/Dog");
+const Adopt = require ("./../models/Adopt")
 
 //CRUD
 //GET DOGS
@@ -113,4 +114,36 @@ exports.getViewAdopt = async (req, res) => {
   res.render("adoption/formAdoption", {
     foundDog,
   });
+};
+
+
+//POST FORMULARIO ADOPCIÓN
+exports.postAdopt = async (req, res) => {
+  //obtener datos del formulario
+  const firstName = req.body.firstName;
+  const lastName = req.body.lastName;
+  const email = req.body.email;
+  const country = req.body.country;
+  const streetAdress = req.body.streetAdress;
+  const postalCode = req.body.postalCode;
+  const interes = req.body.interes;
+  const pets = req.body.pets;
+  const paseos = req.body.paseos;
+  const space = req.body.space;
+
+
+  const newAdoptForm = await Adopt.create({
+    firstName ,
+    lastName,
+    email,
+    country, //delegacion
+    streetAdress,
+    postalCode,
+    interes,
+    pets,
+    paseos,
+   space
+  });
+
+  res.redirect("/dogs/AllDogs");
 };
