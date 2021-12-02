@@ -11,7 +11,7 @@
               <img
                 class="h-16 w-16 rounded-full"
                 src="{{currentUser.imageUrl}}"
-                alt=""
+                alt="{{currentUser.imageUrl}}"
               />
               <span
                 class="absolute inset-0 shadow-inner rounded-full"
@@ -24,11 +24,10 @@
               class="text-2xl font-bold text-gray-900"
             >{{currentUser.username}}</h1>
             <p class="text-sm font-medium text-gray-500">{{currentUser.email}}
-             
+            </p>
           </div>
         </div>
       </div>
-
       <div
         class="mt-8 max-w-3xl mx-auto grid grid-cols-1 gap-6 sm:px-6 lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3"
       >
@@ -41,7 +40,7 @@
                   id="applicant-information-title"
                   class="text-lg leading-6 font-medium text-gray-900"
                 >
-                  Información 
+                  Información
                 </h2>
                 <p class="mt-1 max-w-2xl text-sm text-gray-500">
                   Detalles personales
@@ -62,7 +61,7 @@
                       Email address
                     </dt>
                     <dd class="mt-1 text-sm text-gray-900">
-                     {{currentUser.email}}
+                      {{currentUser.email}}
                     </dd>
                   </div>
                   <div class="sm:col-span-1">
