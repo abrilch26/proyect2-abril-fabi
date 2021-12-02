@@ -80,14 +80,15 @@
                 </ul>
               </div>
             </div>
-            <!-- More sections... -->
+            {{!-- Validar que sea el owner para editar/borrar el perrito--}}
+            {{/with}}
+            {{#if isOwner}}
+            {{#with getDog}}
             <a href="/dogs/{{this._id}}/editDog">Editar perrito</a>
             <form method="POST" action="/dogs/{{this._id}}/deleteDog">
               <button>Borrar perrito</button>
             </form>
             {{/with}}
-            {{#if isOwner}}
-
             {{/if}}
           </div>
         </section>
