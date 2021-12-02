@@ -1,5 +1,5 @@
 const Dog = require("./../models/Dog");
-const Adopt = require("./../models/Adopt");
+const Adopt = require ("./../models/Adopt")
 
 //CRUD
 //GET DOGS
@@ -130,6 +130,7 @@ exports.getViewAdopt = async (req, res) => {
   });
 };
 
+
 //POST FORMULARIO ADOPCIÓN
 exports.postAdopt = async (req, res) => {
   //obtener datos del formulario
@@ -144,8 +145,9 @@ exports.postAdopt = async (req, res) => {
   const paseos = req.body.paseos;
   const space = req.body.space;
 
+
   const newAdoptForm = await Adopt.create({
-    firstName,
+    firstName ,
     lastName,
     email,
     country, //delegacion
@@ -154,26 +156,9 @@ exports.postAdopt = async (req, res) => {
     interes,
     pets,
     paseos,
-    space,
+   space
   });
-  if (
-    !firstName ||
-    !lastName ||
-    !email ||
-    !country ||
-    !streetAdress ||
-    !postalCode ||
-    !interes ||
-    !pets ||
-    !paseos ||
-    !space
-  ) {
-    res.render("adoption/formAdoption.hbs", {
-      msg: "Uno o más campos se encuentran vacíos",
-    });
-    return;
-  }
-  console.log(newAdoptForm);
+  console.log(newAdoptForm)
 
-  res.redirect("/dogs/allDogs");
+  res.redirect("/dogs/AllDogs");
 };
