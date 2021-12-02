@@ -6,7 +6,7 @@ const adoptSchema = mongoose.Schema({
   lastName: String,
   email: String,
   country: String, //delegacion
-  streetAddress: String,
+  streetAdress: String,
   postalCode: String,
   interes: String,
   pets: String,

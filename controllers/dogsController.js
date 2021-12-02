@@ -156,7 +156,7 @@ exports.postAdopt = async (req, res) => {
     interes,
     pets,
     paseos,
-   space
+    space
   });
   console.log(newAdoptForm)
 
