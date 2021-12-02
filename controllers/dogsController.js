@@ -143,37 +143,21 @@ exports.postAdopt = async (req, res) => {
   const pets = req.body.pets;
   const paseos = req.body.paseos;
   const space = req.body.space;
-
-  const newAdoptForm = await Adopt.create({
-    firstName,
-    lastName,
-    email,
-    country, //delegacion
-    streetAdress,
-    postalCode,
-    interes,
-    pets,
-    paseos,
-    space,
-  });
-  if (
-    !firstName ||
-    !lastName ||
-    !email ||
-    !country ||
-    !streetAdress ||
-    !postalCode ||
-    !interes ||
-    !pets ||
-    !paseos ||
-    !space
-  ) {
-    res.render("adoption/formAdoption", {
-      msg: "Uno o más campos se encuentran vacíos",
+  try {
+    const newAdoptForm = await Adopt.create({
+      firstName,
+      lastName,
+      email,
+      country, //delegacion
+      streetAdress,
+      postalCode,
+      interes,
+      pets,
+      paseos,
+      space,
     });
-    return;
+    res.redirect("/dogs/allDogs");
+  } catch (error) {
+    console.log(error);
   }
-  console.log(newAdoptForm);
-
-  res.redirect("/dogs/allDogs");
 };
