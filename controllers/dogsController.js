@@ -59,10 +59,24 @@ exports.postCreateDog = async (req, res) => {
     informes,
     owner,
   });
-
+  if (
+    !name ||
+    !age ||
+    !size ||
+    !sexo ||
+    !funFact ||
+    !image ||
+    !image ||
+    !description ||
+    !informes
+  ) {
+    res.render("dogs/createDog", {
+      msg: "Uno o más campos se encuentran vacíos",
+    });
+    return;
+  }
   res.redirect("/dogs/allDogs");
 };
-
 //  EDITAR PERRITO
 //A.Vista editar
 exports.getViewEdit = async (req, res) => {
