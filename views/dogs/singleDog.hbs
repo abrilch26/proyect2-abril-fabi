@@ -7,9 +7,7 @@
         <!-- Image selector -->
         <div class="hidden mt-6 w-full max-w-2xl mx-auto sm:block lg:max-w-none">
           <div class="grid grid-cols-4 gap-6" aria-orientation="horizontal" role="tablist">
-            <button id="tabs-1-tab-1"
-              class="relative h-24 bg-white rounded-md flex items-center justify-center text-sm font-medium uppercase text-gray-900 cursor-pointer hover:bg-gray-50 focus:outline-none focus:ring focus:ring-offset-4 focus:ring-opacity-50"
-              aria-controls="tabs-1-panel-1" role="tab" type="button">
+            <button id="tabs-1-tab-1" class="relative h-24 bg-white rounded-md flex items-center justify-center text-sm font-medium uppercase text-gray-900 cursor-pointer hover:bg-gray-50 focus:outline-none focus:ring focus:ring-offset-4 focus:ring-opacity-50" aria-controls="tabs-1-panel-1" role="tab" type="button">
               <span class="sr-only">
                 Angled view
               </span>
@@ -17,8 +15,7 @@
                 <img src="{{this.image}}" alt="" class="w-full h-full object-center object-cover" />
               </span> --}}
               <!-- Selected: "ring-indigo-500", Not Selected: "ring-transparent" -->
-              <span class="ring-transparent absolute inset-0 rounded-md ring-2 ring-offset-2 pointer-events-none"
-                aria-hidden="true"></span>
+              <span class="ring-transparent absolute inset-0 rounded-md ring-2 ring-offset-2 pointer-events-none" aria-hidden="true"></span>
             </button>
 
             <!-- More images... -->
@@ -28,8 +25,7 @@
         <div class="w-full aspect-w-1 aspect-h-1">
           <!-- Tab panel, show/hide based on tab state. -->
           <div id="tabs-1-panel-1" aria-labelledby="tabs-1-tab-1" role="tabpanel" tabindex="0">
-            <img src="{{this.image}}" alt="Angled front view with bag zipped and handles upright."
-              class="w-full h-full object-center object-cover sm:rounded-lg" />
+            <img src="{{this.image}}" alt="Angled front view with bag zipped and handles upright." class="w-full h-full object-center object-cover sm:rounded-lg" />
           </div>
 
           <!-- More images... -->
@@ -55,21 +51,8 @@
         <form class="mt-6">
 
           <div class="mt-10 flex sm:flex-col1">
-            <button type="submit"
-              class="max-w-xs flex-1 bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500 sm:w-full">
+            <button type="submit" class="max-w-xs flex-1 bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500 sm:w-full">
               <a href="/dogs/{{this._id}}/adopt">Quiero adoptarlo</a>
-              </button>
-
-            <button type="button"
-              class="ml-4 py-3 px-3 rounded-md flex items-center justify-center text-gray-400 hover:bg-gray-100 hover:text-gray-500">
-              <!-- Heroicon name: outline/heart -->
-              <svg class="h-6 w-6 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                </path>
-              </svg>
-              <span class="sr-only">Add to favorites</span>
             </button>
           </div>
         </form>
@@ -81,8 +64,7 @@
             <div>
               <h3>
                 <!-- Expand/collapse question button -->
-                <button type="button" class="group relative w-full py-6 flex justify-between items-center text-left"
-                  aria-controls="disclosure-1" aria-expanded="false">
+                <button type="button" class="group relative w-full py-6 flex justify-between items-center text-left" aria-controls="disclosure-1" aria-expanded="false">
                   <!-- Open: "text-indigo-600", Closed: "text-gray-900" -->
                   <span class="text-gray-1200 text-xl font-bold">
                     Detalles
