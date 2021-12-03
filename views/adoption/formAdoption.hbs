@@ -1,13 +1,13 @@
 {{#with foundDog}}
-<div class="min-h-full">
+<div class="min-h-full bg-yellow-50 bg-opacity-25">
     <main class="py-10">
-        <div class="mt-8 max-w-3xl mx-auto grid grid-cols-1 gap-6 sm:px-6 lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3">
-            <div class="space-y-6 lg:col-start-1 lg:col-span-2">
+        <div class="mt-8 max-w-3xl mx-auto grid grid-cols-1 gap-6 sm:px-6 lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3 ">
+            <div class="space-y-6 lg:col-start-1 lg:col-span-2  ">
                 <!-- Description list-->
                 <section aria-labelledby="applicant-information-title">
                     <div class="bg-white shadow sm:rounded-lg">
                         <div class="px-4 py-5 sm:px-6">
-                            <h2 id="applicant-information-title" class="text-2xl leading-6 font-medium text-gray-900">
+                            <h2 id="applicant-information-title" class="text-2xl leading-6 font-medium text-blue-900">
                                 Formulario de adopción
                             </h2>
                         </div>
@@ -15,7 +15,7 @@
                             <form action="/dogs/{{this._id}}/adopt" method="POST" class="space-y-6">
                                 <div>
                                     <div>
-                                        <h3 class="text-lg leading-6 font-medium text-gray-900">
+                                        <h3 class="text-lg leading-6 font-medium text-blue-900">
                                             Datos del solicitante
                                         </h3>
                                         <p class="mt-1 max-w-2xl text-sm text-gray-500">
@@ -24,7 +24,7 @@
                                     </div>
                                     <div class="space-y-6 sm:space-y-5">
                                         <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                                            <label for="firstName" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                                            <label for="firstName" class="block text-sm font-medium text-red-700 sm:mt-px sm:pt-2">
                                                 Nombre
                                             </label>
                                             <div class="mt-1 sm:mt-0 sm:col-span-2">
@@ -33,7 +33,7 @@
                                         </div>
 
                                         <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                                            <label for="lastName" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                                            <label for="lastName" class="block text-sm font-medium text-red-700 sm:mt-px sm:pt-2">
                                                 Apellido
                                             </label>
                                             <div class="mt-1 sm:mt-0 sm:col-span-2">
@@ -42,7 +42,7 @@
                                         </div>
 
                                         <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                                            <label for="email" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                                            <label for="email" class="block text-sm font-medium text-red-700 sm:mt-px sm:pt-2">
                                                 Correo electrónico
                                             </label>
                                             <div class="mt-1 sm:mt-0 sm:col-span-2">
@@ -51,11 +51,11 @@
                                         </div>
 
                                         <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                                            <label for="country" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                                            <label for="country" class="block text-sm font-medium text-red-700 sm:mt-px sm:pt-2">
                                                 Delegación
                                             </label>
                                             <div class="mt-1 sm:mt-0 sm:col-span-2">
-                                                <select id="country" name="country" autocomplete="country-name" class="max-w-lg block focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:max-w-xs sm:text-sm border-gray-300 rounded-md">
+                                                <select id="country" name="country" autocomplete="country-name" class="max-w-lg block focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:max-w-xs sm:text-sm text-red-700 border-gray-300 rounded-md">
                                                     <option>Azcapotzalco</option>
                                                     <option>Álvaro Obregón</option>
                                                     <option>Benito Juárez</option>
@@ -77,7 +77,7 @@
                                         </div>
 
                                         <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                                            <label for="streetAdress" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                                            <label for="streetAdress" class="block text-sm font-medium text-red-700 sm:mt-px sm:pt-2">
                                                 Calle
                                             </label>
                                             <div class="mt-1 sm:mt-0 sm:col-span-2">
@@ -86,7 +86,7 @@
                                         </div>
 
                                         <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                                            <label for="postal-code" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                                            <label for="postal-code" class="block text-sm font-medium text-red-700 sm:mt-px sm:pt-2">
                                                 Código Postal
                                             </label>
                                             <div class="mt-1 sm:mt-0 sm:col-span-2">
@@ -98,7 +98,7 @@
 
                                 <div class="divide-y divide-gray-200 pt-8 space-y-6 sm:pt-10 sm:space-y-5">
                                     <div>
-                                        <h3 class="text-lg leading-6 font-medium text-gray-900">
+                                        <h3 class="text-lg leading-6 font-medium text-blue-900">
                                             Información sobre tu estilo de vida
                                         </h3>
                                         <p class="mt-1 max-w-2xl text-sm text-gray-500">
@@ -108,7 +108,7 @@
                                     </div>
                                     <div class="space-y-6 sm:space-y-5">
                                         <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                                            <label for="first-name" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                                            <label for="first-name" class="block text-sm font-medium text-green-800 sm:mt-px sm:pt-2">
                                                 ¿Por qué te interesa adoptar a {{this.name}}?
                                             </label>
                                             <div class="mt-1 sm:mt-0 sm:col-span-2">
@@ -117,7 +117,7 @@
                                         </div>
 
                                         <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                                            <label for="last-name" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                                            <label for="last-name" class="block text-sm font-medium text-green-800 sm:mt-px sm:pt-2">
                                                 ¿Tienes más mascotas? ¿Cuáles y cuántas?
                                             </label>
                                             <div class="mt-1 sm:mt-0 sm:col-span-2">
@@ -126,7 +126,7 @@
                                         </div>
 
                                         <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                                            <label for="paseos" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                                            <label for="paseos" class="block text-sm font-medium text-green-800 sm:mt-px sm:pt-2">
                                                 ¿Cuántas veces al día saldrías a pasear con {{this.name}}?
                                             </label>
                                             <div class="mt-1 sm:mt-0 sm:col-span-2">
@@ -135,14 +135,14 @@
                                         </div>
 
                                         <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                                            <label for="space" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                                            <label for="space" class="block text-sm font-medium text-green-800 sm:mt-px sm:pt-2">
                                                 ¿Qué tan grande es el espacio dónde habitaría {{this.name}}?
                                             </label>
                                             <textarea id="space" name="space" rows="3" required class="block w-full shadow-sm focus:ring-sky-500 focus:border-sky-500 sm:text-sm border border-gray-300 rounded-md mt-3"></textarea>
                                         </div>
                                         <div class="pt-5">
                                             <div class="flex justify-end">
-                                                <button type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                                <button type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-yellow-500 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-600">
                                                     Enviar formulario
                                                 </button>
                                             </div>
