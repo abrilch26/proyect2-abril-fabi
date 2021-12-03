@@ -1,5 +1,5 @@
 const Dog = require("./../models/Dog");
-const Adopt = require ("./../models/Adopt")
+const Adopt = require("./../models/Adopt");
 
 //CRUD
 //GET DOGS
@@ -130,7 +130,6 @@ exports.getViewAdopt = async (req, res) => {
   });
 };
 
-
 //POST FORMULARIO ADOPCIÓN
 exports.postAdopt = async (req, res) => {
   //obtener datos del formulario
@@ -144,21 +143,21 @@ exports.postAdopt = async (req, res) => {
   const pets = req.body.pets;
   const paseos = req.body.paseos;
   const space = req.body.space;
-
-
-  const newAdoptForm = await Adopt.create({
-    firstName ,
-    lastName,
-    email,
-    country, //delegacion
-    streetAdress,
-    postalCode,
-    interes,
-    pets,
-    paseos,
-    space
-  });
-  console.log(newAdoptForm)
-
-  res.redirect("/dogs/AllDogs");
+  try {
+    const newAdoptForm = await Adopt.create({
+      firstName,
+      lastName,
+      email,
+      country, //delegacion
+      streetAdress,
+      postalCode,
+      interes,
+      pets,
+      paseos,
+      space,
+    });
+    res.redirect("/dogs/allDogs");
+  } catch (error) {
+    console.log(error);
+  }
 };
