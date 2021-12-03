@@ -1,143 +1,62 @@
 {{#if currentUser}}
-  <div class="min-h-full">
-    <main class="py-10">
-      <div
-        class="max-w-3xl mx-auto px-4 sm:px-6 md:flex md:items-center md:justify-between md:space-x-5 lg:max-w-7xl lg:px-8"
-      >
-        <div class="flex items-center space-x-5">
-          <div class="flex-shrink-0">
-            <div class="relative">
-              <img
-                class="h-16 w-16 rounded-full"
-                src="{{currentUser.imageUrl}}"
-                alt="{{currentUser.imageUrl}}"
-              />
-              <span
-                class="absolute inset-0 shadow-inner rounded-full"
-                aria-hidden="true"
-              ></span>
-            </div>
-          </div>
-          <div>
-            <h1
-              class="text-2xl font-bold text-gray-900"
-            >{{currentUser.username}}</h1>
-            <p class="text-sm font-medium text-gray-500">{{currentUser.email}}
-            </p>
+<div class="min-h-full">
+  <main class="py-10">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 md:flex md:items-center md:justify-between md:space-x-5 lg:max-w-7xl lg:px-8">
+      <div class="flex items-center space-x-5">
+        <div class="flex-shrink-0">
+          <div class="relative">
+            <img class="h-16 w-16 rounded-full" src="{{currentUser.imageUrl}}" alt="{{currentUser.imageUrl}}" />
+            <span class="absolute inset-0 shadow-inner rounded-full" aria-hidden="true"></span>
           </div>
         </div>
-      </div>
-      <div
-        class="mt-8 max-w-3xl mx-auto grid grid-cols-1 gap-6 sm:px-6 lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3"
-      >
-        <div class="space-y-6 lg:col-start-1 lg:col-span-2">
-          <!-- Description list-->
-          <section aria-labelledby="applicant-information-title">
-            <div class="bg-white shadow sm:rounded-lg">
-              <div class="px-4 py-5 sm:px-6">
-                <h2
-                  id="applicant-information-title"
-                  class="text-lg leading-6 font-medium text-gray-900"
-                >
-                  Información
-                </h2>
-                <p class="mt-1 max-w-2xl text-sm text-gray-500">
-                  Detalles personales
-                </p>
-              </div>
-              <div class="border-t border-gray-200 px-4 py-5 sm:px-6">
-                <section
-                  aria-labelledby="timeline-title"
-                  class="lg:col-start-3 lg:col-span-1"
-                >
-                  {{#if isOwner}}
-                    <div>
-                      <h2
-                        id="timeline-title"
-                        class="text-lg font-medium text-gray-900"
-                      >Tus Perritos</h2>
-
-                      <div class="mt-6 flow-root">
-                        <ul role="list" class="-mb-8">
-                          <li>
-                            <div class="relative pb-8">
-                              <span
-                                class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200"
-                                aria-hidden="true"
-                              ></span>
-                              <div class="relative flex space-x-3">
-                                <div>
-                                  <span
-                                    class="h-8 w-8 rounded-full bg-gray-400 flex items-center justify-center ring-8 ring-white"
-                                  >
-                                    <!-- Heroicon name: solid/user -->
-                                    <svg
-                                      class="w-5 h-5 text-white"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      viewBox="0 0 20 20"
-                                      fill="currentColor"
-                                      aria-hidden="true"
-                                    >
-                                      <path
-                                        fill-rule="evenodd"
-                                        d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                                        clip-rule="evenodd"
-                                      ></path>
-                                    </svg>
-                                  </span>
-                                </div>
-                                <div
-                                  class="min-w-0 flex-1 pt-1.5 flex justify-between space-x-4"
-                                >
-                                  <div>
-                                    <p class="text-sm text-gray-500">Nombre:
-                                      <a
-                                        href="#"
-                                        class="font-medium text-gray-900"
-                                      >Front End Developer</a></p>
-                                  </div>
-                                  <div
-                                    class="text-right text-sm whitespace-nowrap text-gray-500"
-                                  >
-                                    <time datetime="2020-09-20">Sep 20</time>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="mt-6 flex flex-col justify-stretch">
-                        <button
-                          type="button"
-                          class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                        >
-                          Advance to offer
-                        </button>
-                      </div>
-                    </div>
-                  {{else}}
-                    <h2
-                      id="timeline-title"
-                      class="text-md leading-6 font-normal text-gray-900"
-                    >Aún no tienes perritos registrados</h2>
-                    <button
-                      type="button"
-                      class="mt-5 inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                    >
-                      <a href="/dogs/createDog">Registra un perrito</a>
-                    </button>
-
-                  {{/if}}
-                </section>
-              </div>
-
-            </div>
-          </section>
+        <div>
+          <h1 class="text-2xl font-bold text-gray-900">{{currentUser.username}}</h1>
+          <p class="text-sm font-medium text-gray-500">{{currentUser.email}}
+          </p>
         </div>
-
       </div>
-    </main>
-  </div>
+    </div>
+    <div class="mt-8 max-w-3xl mx-auto grid grid-cols-1 gap-6 sm:px-6 lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3">
+      <div class="space-y-6 lg:col-start-1 lg:col-span-2">
+        <!-- Description list-->
+        <section aria-labelledby="applicant-information-title">
+          <div class="bg-white shadow sm:rounded-lg">
+            <div class="px-4 py-5 sm:px-6">
+              <h2 id="applicant-information-title" class="text-xl leading-6 font-medium text-gray-900">
+                Información
+              </h2>
+              <p class="mt-1 max-w-2xl text-sm text-gray-500">
+                Detalles personales
+              </p>
+            </div>
+            <div class="border-t border-gray-200 px-4 py-5 sm:px-6">
+              <section aria-labelledby="timeline-title" class="lg:col-start-3 lg:col-span-1">
+                {{#if isOwner}}
+                <h2 id="timeline-title" class="text-md font-medium text-gray-900">Tus Perritos a la espera de adopción</h2>
+                {{#each myDogs}}
+                <h3>
+                  {{this.name}}
+                </h3>
+                {{/each}}
+
+
+                {{else}}
+                <h2 id="timeline-title" class="text-md leading-6 font-normal text-gray-900">Aún no tienes perritos registrados</h2>
+                <button type="button" class="mt-5 inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                  <a href="/dogs/createDog">Registra un perrito</a>
+                </button>
+
+                {{/if}}
+
+              </section>
+            </div>
+
+          </div>
+        </section>
+      </div>
+
+    </div>
+  </main>
+</div>
 
 {{/if}}
