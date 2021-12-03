@@ -11,32 +11,30 @@
 
 <body>
   {{#if currentUser}}
-  <nav class="bg-gray-800">
+  <nav class="bg-black bg-opacity-90">
     <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
       <div class="relative flex items-center justify-between h-16">
         <div class="flex items-center px-2 lg:px-0">
           <div class="flex-shrink-0">
             <a href = "/">
-            <img class="block lg:hidden h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
-              alt="Workflow" />
             <img class="hidden lg:block h-8 w-auto"
-              src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg" alt="Workflow" />
+              src="https://i.ibb.co/sqgj505/Captura-de-Pantalla-2021-12-03-a-la-s-8-49-58.png" alt="electric Dogs" />
               </a>
           </div>
           <div class="hidden lg:block lg:ml-6">
             <div class="flex space-x-4">
                 <button
-                  class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                  class="text-white hover:bg-blue-900 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                   <a href="/dogs/allDogs">Nuestros doggos</a></button>
 
                   <button
-                  class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                  class="text-white hover:bg-green-800 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                   <a href="/dogs/createDog">Registrar perrito</a></button>
               
 
               <form action="/logout" method="POST">
                 <button
-                  class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium mt-4">Cerrar
+                  class="text-white hover:bg-red-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium mt-4">Cerrar
                   sesión</button>
               </form>
 
