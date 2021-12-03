@@ -33,11 +33,30 @@
               <section aria-labelledby="timeline-title" class="lg:col-start-3 lg:col-span-1">
                 {{#if isOwner}}
                 <h2 id="timeline-title" class="text-md font-medium text-gray-900">Tus Perritos a la espera de adopción</h2>
-                {{#each myDogs}}
-                <h3>
-                  {{this.name}}
-                </h3>
-                {{/each}}
+                {{!-- {{#each myDogs}}
+
+                {{/each}} --}}
+                <div class="bg-yellow-50 bg-opacity-25">
+                  <div class="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+                    <div class="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:gap-x-8">
+                      {{#each myDogs}}
+                      <a href="/dogs/{{this._id}}" class="group pb-28">
+                        <div class="w-full aspect-w-1 aspect-h-1 rounded-lg overflow-hidden sm:aspect-w-2 sm:aspect-h-3">
+                          <img src="{{this.image}}" alt="Person using a pen to cross a task off a productivity paper card." class="w-full h-full object-center object-cover group-hover:opacity-75 " />
+                        </div>
+                        <div class="mt-4 flex items-center justify-between text-base font-medium text-blue-900">
+                          <h3>
+                            {{this.name}}
+                          </h3>
+                        </div>
+                        <p class="mt-1 text-sm italic text-gray-500">
+                          {{this.description}}
+                        </p>
+                      </a>
+                      {{/each}}
+                    </div>
+                  </div>
+                </div>
 
 
                 {{else}}
