@@ -1,5 +1,5 @@
 {{#if currentUser}}
-<div class="min-h-full">
+<div class="min-h-full bg-yellow-50 bg-opacity-25">
   <main class="py-10">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 md:flex md:items-center md:justify-between md:space-x-5 lg:max-w-7xl lg:px-8">
       <div class="flex items-center space-x-5">
@@ -10,7 +10,7 @@
           </div>
         </div>
         <div>
-          <h1 class="text-2xl font-bold text-gray-900">{{currentUser.username}}</h1>
+          <h1 class="text-2xl font-bold text-red-700">{{currentUser.username}}</h1>
           <p class="text-sm font-medium text-gray-500">{{currentUser.email}}
           </p>
         </div>
@@ -22,7 +22,7 @@
         <section aria-labelledby="applicant-information-title">
           <div class="bg-white shadow sm:rounded-lg">
             <div class="px-4 py-5 sm:px-6">
-              <h2 id="applicant-information-title" class="text-xl leading-6 font-medium text-gray-900">
+              <h2 id="applicant-information-title" class="text-xl leading-6 font-medium text-blue-900">
                 Información
               </h2>
               <p class="mt-1 max-w-2xl text-sm text-gray-500">
@@ -32,11 +32,11 @@
             <div class="border-t border-gray-200 px-4 py-5 sm:px-6">
               <section aria-labelledby="timeline-title" class="lg:col-start-3 lg:col-span-1">
                 {{#if isOwner}}
-                <h2 id="timeline-title" class="text-md font-medium text-gray-900">Tus Perritos a la espera de adopción</h2>
+                <h2 id="timeline-title" class="text-md font-medium text-green-800">Tus Perritos a la espera de adopción</h2>
                 {{!-- {{#each myDogs}}
 
                 {{/each}} --}}
-                <div class="bg-yellow-50 bg-opacity-25">
+                <div class="bg-white">
                   <div class="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
                     <div class="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:gap-x-8">
                       {{#each myDogs}}
